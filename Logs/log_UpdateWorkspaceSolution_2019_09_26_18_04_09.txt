@@ -1,0 +1,79 @@
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->Managers-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MobileDesignerTools-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->BaseProcessDesigner-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->ProcessLibrary-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CalendarBase-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MLBase-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->BpmonlineCloudIntegration-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->ContentBuilder-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->Workplace-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->OAuth20Integration-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MLRegression-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->SspWorkplace-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MLScoring-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->JunkFilter-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MLCaseClassification-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WebCaseForm-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->ProductSpecification-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->MarketingCommon-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->OperatorCustomerEngagementCenter-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->Mailing-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WebOrderForm-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CampaignElements-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CampaignDesigner-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CampaignElements.UI-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CloudEmailService-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->IncidentManagement-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkCore-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkMaintenance-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->ProcessScheduler-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkNotification-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkProjectBase-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->GlobalSearchAppStart-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkMLCaseClassification-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->ATF_DashboardDesigner-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkMLLeadScoring-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->CSMCISNPS-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->AutoTest-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->WorkOrdersAndInvoicesHistory-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
+[18:04:19] List of modules assembly contains the loop: "MarketingCalendarNew-->Telemetry-->MarketingCalendarNew" 
+[18:04:19] Sorting modules 
