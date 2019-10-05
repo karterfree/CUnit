@@ -1,6 +1,6 @@
 ﻿namespace CUnit.Framework.Core
 {
-    using CUnit.Framework.Assets;
+    using CUnit.Framework.Asserts;
     using System;
 	using System.Collections.Generic;
 

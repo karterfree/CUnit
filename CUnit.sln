@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUnit.Framework", "CUnit.Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUnit.Framework.Tests", "CUnit.Framework.Tests\CUnit.Framework.Tests.csproj", "{3E01F66D-7B10-489D-B5DA-E65E2C23C2FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CUnit.Examples", "CUnit.Examples\CUnit.Examples.csproj", "{025F8A14-7526-4088-8AA6-9E966DD0FCCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3E01F66D-7B10-489D-B5DA-E65E2C23C2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E01F66D-7B10-489D-B5DA-E65E2C23C2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E01F66D-7B10-489D-B5DA-E65E2C23C2FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025F8A14-7526-4088-8AA6-9E966DD0FCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025F8A14-7526-4088-8AA6-9E966DD0FCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025F8A14-7526-4088-8AA6-9E966DD0FCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025F8A14-7526-4088-8AA6-9E966DD0FCCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

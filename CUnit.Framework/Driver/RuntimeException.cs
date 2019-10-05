@@ -9,6 +9,6 @@
 
 		public Type Type { get; set; }
 
-		public StackTrace StackTrace { get; set; }
+		public string StackTrace { get; set; }
 	}
 }

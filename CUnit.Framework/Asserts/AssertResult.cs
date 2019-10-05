@@ -1,4 +1,4 @@
-﻿namespace CUnit.Framework.Assets
+﻿namespace CUnit.Framework.Asserts
 {
 	using System.Diagnostics;
 	using System.Reflection;

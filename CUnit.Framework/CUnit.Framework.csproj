@@ -123,19 +123,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ActionСriterion.cs" />
-    <Compile Include="Assets\Assert.cs" />
-    <Compile Include="Assets\BaseСriterion.cs" />
-    <Compile Include="Assets\BoolСriterion.cs" />
-    <Compile Include="Assets\CommonСriterion.cs" />
-    <Compile Include="Assets\IActionСriterion.cs" />
-    <Compile Include="Assets\IBoolСriterion.cs" />
-    <Compile Include="Assets\ICommonСriterion.cs" />
-    <Compile Include="Assets\IEmptyСriterion.cs" />
-    <Compile Include="Assets\IObjectСriterion.cs" />
-    <Compile Include="Assets\IStringСriterion.cs" />
-    <Compile Include="Assets\ObjectСriterion.cs" />
-    <Compile Include="Assets\StringСriterion.cs" />
+    <Compile Include="Asserts\ActionСriterion.cs" />
+    <Compile Include="Asserts\Assert.cs" />
+    <Compile Include="Asserts\BaseСriterion.cs" />
+    <Compile Include="Asserts\BoolСriterion.cs" />
+    <Compile Include="Asserts\CommonСriterion.cs" />
+    <Compile Include="Asserts\IActionСriterion.cs" />
+    <Compile Include="Asserts\IBoolСriterion.cs" />
+    <Compile Include="Asserts\ICommonСriterion.cs" />
+    <Compile Include="Asserts\IEmptyСriterion.cs" />
+    <Compile Include="Asserts\IObjectСriterion.cs" />
+    <Compile Include="Asserts\IStringСriterion.cs" />
+    <Compile Include="Asserts\ObjectСriterion.cs" />
+    <Compile Include="Asserts\StringСriterion.cs" />
     <Compile Include="Attributes\IgnoreAttribute.cs" />
     <Compile Include="Attributes\SuiteSetUpAttribute.cs" />
     <Compile Include="Attributes\SuiteTearDownAttribute.cs" />
@@ -145,18 +145,21 @@
     <Compile Include="Attributes\TestAttribute.cs" />
     <Compile Include="BaseTestSuite.cs" />
     <Compile Include="Core\TestContext.cs" />
-    <Compile Include="Assets\AssertResult.cs" />
-    <Compile Include="Assets\AssertResultType.cs" />
+    <Compile Include="Asserts\AssertResult.cs" />
+    <Compile Include="Asserts\AssertResultType.cs" />
     <Compile Include="Driver\CUnitTestDriver.cs" />
     <Compile Include="Driver\CUnitTestRunningOption.cs" />
     <Compile Include="Driver\FileSufix.cs" />
-    <Compile Include="Driver\ITestResultWritter.cs" />
+    <Compile Include="Driver\Report\ITestReportBuilder.cs" />
+    <Compile Include="Driver\ITestRunningTracer.cs" />
+    <Compile Include="Driver\Report\NUnitReportBuilder.cs" />
     <Compile Include="Driver\RuntimeException.cs" />
     <Compile Include="Driver\Stage.cs" />
     <Compile Include="Driver\TestAssemblyManager.cs" />
     <Compile Include="Driver\TestAssemblyItem.cs" />
     <Compile Include="Driver\TestAssemblyResolver.cs" />
     <Compile Include="Driver\TestResult.cs" />
+    <Compile Include="Driver\TestRunningTracer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSuiteType.cs" />
   </ItemGroup>

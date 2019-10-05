@@ -12,70 +12,39 @@
 
 		internal string BasePath { get; private set; }
 
-		internal string Mask { get; private set; }
+		internal string Mask { get => _customMask ?? _defaultMask; }
+
+		private string _customMask;
+
+		private static string _defaultMask = "*.dll";
 
 		internal TestAssemblyManager(string basePath, string mask) {
 			BasePath = basePath;
-			Mask = mask;
-			_items = new List<TestAssemblyItem>();
-			AddItemsByPath(BasePath);
-		}
-
-		private void AddItemsByPath(string path) {
-			_items.AddRange(FetchItemsByPath(path));
-			foreach (var folderPath in FetchFoldersByPath(path)) {
-				AddItemsByPath(folderPath);
-			}
+			_customMask = mask;
+			_items = FetchItemsByPath(BasePath);
 		}
 
 		private List<TestAssemblyItem> FetchItemsByPath(string path) {
+			var response = new List<TestAssemblyItem>();
 			var directoryInfo = new DirectoryInfo(path);
-			return GetAllowedFiles(directoryInfo)
-				.Select(info => CreateTestAssemblyItem(info))
-				.ToList();
-		}
-
-		private List<FileInfo> GetAllowedFiles(DirectoryInfo directoryInfo) {
-			return directoryInfo.GetFiles().Where(f => IsAssembly(f) && IsAlloweByMask(f)).ToList();
-		}
-
-		private List<string> FetchFoldersByPath(string path) {
-			var info = new DirectoryInfo(path);
-			return info.GetDirectories().Select(d => d.FullName).Where(x => x != null).ToList();
-		}
-
-		private bool IsAssembly(FileInfo fileInfo) {
-			return fileInfo.Extension == FileSufix.DLL;
-		}
-		
-		private bool IsAlloweByMask(FileInfo fileInfo) {
-			return true;
+			directoryInfo.GetFiles(Mask, SearchOption.AllDirectories)
+				.Where(f => f.Extension == FileSufix.DLL)
+				.ToList()
+				.ForEach(info => {
+					response.Add(CreateTestAssemblyItem(info));
+				});
+			return response;
 		}
 
 		private TestAssemblyItem CreateTestAssemblyItem(FileInfo fileInfo) {
-			var content = File.ReadAllBytes(fileInfo.FullName);
-			var assembly = Assembly.Load(content);
-			return HasTestSuites(assembly)
-				? new TestAssemblyItem() {
-					Name = assembly.FullName,
-					Content = content,
-					ResolveFolder = fileInfo.DirectoryName
-				}
-				: null;
+			return new TestAssemblyItem() {
+				Name = fileInfo.Name,
+				ResolveFolder = fileInfo.DirectoryName
+			};
 		}
 
-		private bool HasTestSuites(Assembly assembly) {
-			return assembly != null
-				? GetTestSuiteClasses(assembly).Any()
-				: false;
-		}
 
-		private List<string> GetTestSuiteClasses(Assembly assembly) {
-			var testSuiteAttributeType = typeof(TestSuiteAttribute);
-			return assembly.GetTypes()
-				.Where(type => type.GetCustomAttributes(testSuiteAttributeType, true).Length > 0)
-				.Select(x => x.FullName).ToList();
-		}
+
 
 	}
 }

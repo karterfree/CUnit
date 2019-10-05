@@ -11,7 +11,7 @@
 
 		public Type Suite { get; set; }
 
-		public MethodInfo Case { get; set; }
+		public MethodInfo Test { get; set; }
 
 		public DateTime StartTime { get; set; }
 

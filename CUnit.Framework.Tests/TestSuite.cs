@@ -30,6 +30,9 @@ namespace CUnit.Framework.Tests
 			object t = null;
 			Assert.Should(t).BeEqual(string.Empty);
 
+			string s = "";
+
+
 			Assert.Should(t).NotBeEqual(string.Empty);
 			bool b1 = true;
 			Assert.Should(b1).BeTrue();

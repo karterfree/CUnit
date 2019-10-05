@@ -1,9 +1,11 @@
 ﻿namespace CUnit.Framework.Driver
 {
 	using CUnit.Framework;
-	using System;
+    using CUnit.Framework.Driver.Report;
+    using System;
 	using System.Collections.Generic;
-	using System.Linq;
+    using System.IO;
+    using System.Linq;
 	using System.Reflection;
 	using Terrasoft.Core;
 
@@ -11,13 +13,18 @@
 	{
 		private CUnitTestRunningOptions _options { get; set; }
 
-		public IUnitTestReporter Reporter { get; set; }
+		private ITestRunningTracer _tracer { get; set; }
+		internal ITestRunningTracer Tracer { get => _tracer ?? (_tracer = new TestRunningTracer()); }
+
+		private ITestReportBuilder _reportBuilder { get; set; }
+		internal ITestReportBuilder ReportBuilder { get => _reportBuilder ?? (_reportBuilder = CreateReportBuilder()); }
 
 		public UserConnection UserConnection { get; set; }
 
-
-		public CUnitTestDriver() {
-			Reporter = CreateReporter();
+		private ITestReportBuilder CreateReportBuilder() {
+			return new NUnitReportBuilder() {
+				SourceTracer = Tracer
+			};
 		}
 
 		public void Run(CUnitTestRunningOptions options) {
@@ -33,18 +40,20 @@
 		}
 
 		private void RunTestAssembly(TestAssemblyItem testAssemblyItem) {
-			Stage stage = (Stage)AppDomain.CurrentDomain.CreateInstanceAndUnwrap(testAssemblyItem.Name, typeof(Stage).FullName);
-			RunTestAssembly(stage.LoadAssembly(testAssemblyItem.Content));
+			Stage stage = (Stage)AppDomain.CurrentDomain.CreateInstanceAndUnwrap(typeof(Stage).Assembly.FullName, typeof(Stage).FullName);
+			RunTestAssembly(stage.LoadAssembly(File.ReadAllBytes(testAssemblyItem.FullName)));
 		}
 
 		public void RunTestAssembly(Assembly assembly) {
-			Reporter.Trace(assembly, (testResult) => {
+			Tracer.Trace(assembly, (testResult) => {
 				var testClasses = GetTypesWithAttribute(assembly, typeof(TestSuiteAttribute));
 				testClasses.ForEach(testFixtureClassType => ExecuteTest(testFixtureClassType));
 			});
 		}
 
-		protected abstract IUnitTestReporter CreateReporter();
+		public string GetReport() {
+			return ReportBuilder.BuildReport();
+		}
 
 		protected virtual List<Type> GetTypesWithAttribute(Assembly assembly, Type attributeType) {
 			return assembly.GetTypes().Where(type => type.GetCustomAttributes(attributeType, true).Length > 0).ToList();
@@ -52,7 +61,7 @@
 
 
 		protected virtual void ExecuteTest(Type testFixtureClassType) {
-			Reporter.Trace(testFixtureClassType, (testResult) => {
+			Tracer.Trace(testFixtureClassType, (testResult) => {
 				if (IsIgnored(testFixtureClassType)) {
 					testResult.Ignored = true;
 				} else {
@@ -61,7 +70,7 @@
 					var instance = createMethod.Invoke(this, new object[] { });
 					SetUserConnection(instance, UserConnection);
 					InvokeSpecificMethodByAttribute(instance, typeof(SuiteSetUpAttribute));
-					var methods = GetMethodsWithAttribute(testFixtureClassType, TestAttribute);
+					var methods = GetMethodsWithAttribute(testFixtureClassType, typeof(TestAttribute));
 					methods.ForEach(methodInfo => ExecuteMethod(instance, methodInfo));
 					InvokeSpecificMethodByAttribute(instance, typeof(SuiteTearDownAttribute));
 				}
@@ -96,14 +105,14 @@
 		}
 
 		protected virtual void ExecuteMethod(object instance, MethodInfo methodInfo) {
-			Reporter.Trace(methodInfo, (testResult) => {
+			Tracer.Trace(methodInfo, (testResult) => {
 				if (IsIgnored(methodInfo)) {
 					testResult.Ignored = true;
 				} else {
 					testResult.Executed = true;
-					Reporter.Try(testResult, x => InvokeSpecificMethodByAttribute(instance, typeof(TestSetUpAttribute)));
-					Reporter.Try(testResult, x => methodInfo.Invoke(instance, new object[] { }));
-					Reporter.Try(testResult, x => InvokeSpecificMethodByAttribute(instance, typeof(TestTearDownAttribute)));
+					Tracer.Try(testResult, x => InvokeSpecificMethodByAttribute(instance, typeof(TestSetUpAttribute)));
+					Tracer.Try(testResult, x => methodInfo.Invoke(instance, new object[] { }));
+					Tracer.Try(testResult, x => InvokeSpecificMethodByAttribute(instance, typeof(TestTearDownAttribute)));
 				}
 			});
 		}
